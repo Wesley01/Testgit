@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <H1>九九乘法表</H1>
+        <script>
+            var a,
+                s;
+            for (a = 1; a <= 9; a++)
+                //document.write('<tr>')
+                for (s = 1; s <= 9; s++) {
+                    document.write(a + "X" + s + "=" + a * s + "<br />");
+                }
+        </script>
+    </body>
+</html>
