@@ -1,14 +1,38 @@
 <html>
+    <head>
+        <style>
+            td,
+            th,
+            tr {
+                text-align: center;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
     <body>
-        <H1>九九乘法表</H1>
-        <script>
-            var a,
-                s;
-            for (a = 1; a <= 9; a++)
-                //document.write('<tr>')
-                for (s = 1; s <= 9; s++) {
-                    document.write(a + "X" + s + "=" + a * s + "<br />");
+        <div style="background-color:FFCC33;text-align:center">
+            <H1>九九乘法表</H1>
+        </div>
+        <div style="background-color:FFFF99">
+            <script>
+                document.write('<table border="4" >');
+                var a,
+                    s;
+                for (a = 1; a < 10; a++) {
+                    document.write('<th>' + a + '</th>')
                 }
-        </script>
+                for (a = 1; a < 10; a++) {
+                    document.write('<tr >')
+                    for (s = 1; s < 10; s++) {
+                        document.write('<td>' + s + "X" + a + "=" + a * s + '</td>');
+                    }
+                    document.write('</tr>');
+                }
+                document.write('</table >');
+            </script>
+        </div>
     </body>
 </html>
