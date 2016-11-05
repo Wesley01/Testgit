@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+            td,
+            th,
+            tr {
+                text-align: center;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-color:FFCC33;text-align:center">
+            <h1>九九乘法表</h1>
+        </div>
+        <div style="background-color:FFFF99">
+            <br/>
+            <table border="4" style="background-color:FFFFFF;">
+                <script>
+                    // document.write("<div>");
+                    var e = 10; // 設定控制變數,宣告變數
+                    while (e > 0) {
+                        document.write('<th>' + e + '</th>');
+                        e--;
+                    }
+                    // document.write("</div>");
+                    var r = 10;
+                    while (r > 0) { // 迴圈工作區
+                        document.write("<tr></tr>")
+                        e = 10;
+                        while (e > 0) {
+                            document.write("<td>" + e + "X" + r + "=&nbsp;" + e * r + "</td >");
+                            e--; // 調整控制變數值
+                        }
+                        r--;
+                    }
+                    document.write("</table>");
+                </script>
+            </table>
+            <br/>
+        </div>
+    </body>
+</html>

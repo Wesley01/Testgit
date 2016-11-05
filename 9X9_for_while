@@ -14,24 +14,26 @@
     </head>
     <body>
         <div style="background-color:FFCC33;text-align:center">
-            <H1>九九乘法表</H1>
+            <hi>九九乘法表</hi>
         </div>
         <div style="background-color:FFFF99">
             <br/>
             <table border="4">
                 <script>
                     for (var a = 1; a < 10; a++) {
-                        document.write('<th>' + a + '</th>')
+                        document.write('<th>' + a + '</th>');
                     }
-                    for (a = 1; a < 10; a++) {
-                        document.write('<tr >')
-                        for (var s = 1; s < 10; s++) {
-                            document.write('<td>' + s + "X" + a + "=" + a * s + '</td>');
+                    for (var a = 1; a < 10; a++) {
+                        document.write('<tr>')
+                        var s = 1
+                        while (s < 10) {
+                            document.write('<td>' + s + "X" + a + "=" + s * a + '</td>')
+                            s++;
                         }
-                        document.write('</tr>');
+                        document.write('</tr>')
                     }
                 </script>
-            </table >
+            </table>
             <br/>
         </div>
     </body>

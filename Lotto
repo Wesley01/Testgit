@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <style>
+            th {}
+        </style>
+    </head>
+    <body>
+        <h1>樂透號碼預測︰</h1>
+        <table border="1">
+            <script>
+                for (var a = 1; a < 7; a++) {
+                    document.write('<tr>')
+                    document.write('<td width="60" height="40" align="center" valign="middle">號碼' + a + '</td>')
+                    for (var i = 1; i < 7; i++) {
+                        document.write('<td><input /></td>')
+            </script>
+        </table>
+    </body>
+</html>
