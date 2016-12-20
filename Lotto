@@ -1,21 +1,64 @@
 <html>
     <head>
-        <style>
-            th {}
-        </style>
+        <style></style>
     </head>
     <body>
-        <h1>樂透號碼預測︰</h1>
-        <table border="1">
-            <script>
-                for (var a = 1; a < 7; a++) {
-                    document.write('<tr>')
-                    document.write('<td width="60" height="40" align="center" valign="middle">號碼' + a + '</td>')
+        <h1>樂透號碼模擬︰</h1>
+        <table style="border:3px #cccccc solid;" cellpadding="10" border='1'>
+            <tr>
+                <script>
                     for (var i = 1; i < 7; i++) {
-                        document.write('<td><input /></td>')
+                        document.write("<td> 號碼 " + i + " </td>")
                     }
+                    document.write("<td>特別號</td>");
+                </script>
+            </tr>
+            <tr>
+                <script>
+                    for (var s = 1; s < 8; s++) {
+                        document.write("<td id=num0" + s + ">______</td>")
+                    }
+                </script>
+            </tr>
+            <tr>
+                <td height="40" colspan="7" align="center" valign="middle">
+                    <!--colspan 合併欄位-->
+                    <input type="submit" name="NumberRender" id="NumberRender" value="產生號碼" onclick="getRandom()"/>
+                </tr>
+            </table>
+            <script>
+                // var NumIDArray = Array("num01", "num02", "num03", "num04", "num05", "num06", "num07"); 宣告NumIDArray，存放表單input元件的名稱
+                var maxNum = 49;
+                var minNum = 1;
+                function getRandom() {
+                    var NumArray = []
+                    for (var i = 0; i < 7; i++) {
+                        do {
+                            var num = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+                        } while (NumArray.indexOf(num) != -1);
+                        NumArray.push(num);
+                        // while (num != num) NumArray[i] = num;
+                    }
+                    NumArray.sort(function (a, b) {
+                        return a - b;
+                    });
+                    fillNum(NumArray);
+                    // NumArray.length = 0;
                 }
+                function fillNum(NumArray) {
+                    for (var j = 0; j < 7; j++) {
+                        document.getElementById("num0" + j).innerHTML = NumArray[j];
+                    }
+                    document.getElementById("num01").innerHTML = NumArray[0];
+                    document.getElementById("num02").innerHTML = NumArray[1];
+                    document.getElementById("num03").innerHTML = NumArray[2];
+                    document.getElementById("num04").innerHTML = NumArray[3];
+                    document.getElementById("num05").innerHTML = NumArray[4];
+                    document.getElementById("num06").innerHTML = NumArray[5];
+                    document.getElementById("num07").innerHTML = NumArray[6];
+                    // for (var j = 0; j < 8; j++) { document.getElementById(NumIDArray[j]).innerHTML = NumArray[j];
+                }
+                // document.getElementById("num01").innerHTML = NumArray[0]; for (var j = 0; j < 7; j++) {     // document.write([j] + "<br />");     document.getElementById(NunIDArray[j]).innerHTML = NumArray[j]; // 將值填入表單-getElementById尋找id(num01) }
             </script>
-        </table>
-    </body>
-</html>
+        </body>
+    </html>
